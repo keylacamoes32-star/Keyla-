@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f3ed">
+  <meta name="description" content="Find a simple starting point for your wellness goals with a guided 14-day plan.">
+  <title>Your 14-Day Wellness Plan</title>
+  <style>
+    :root{--ink:#20251f;--muted:#6b7168;--green:#315d43;--green2:#244734;--lime:#d8edb7;--cream:#f6f3ed;--white:#fff;--line:#e6e8df;--coral:#e78b69}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+    button,a{font:inherit}button{cursor:pointer}.topbar{display:flex;justify-content:space-between;align-items:center;padding:18px clamp(18px,5vw,72px);gap:16px}.brand{font-weight:850;letter-spacing:-.04em;font-size:1.15rem}.brand span{color:var(--green)}.secure{color:var(--muted);font-size:.83rem;display:flex;align-items:center;gap:7px}
+    .hero{max-width:1120px;margin:20px auto 60px;padding:0 22px;display:grid;grid-template-columns:1.03fr .97fr;gap:42px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#e8eedf;color:var(--green);padding:7px 12px;border-radius:999px;font-size:.78rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}.eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--coral)}h1{font-size:clamp(2.6rem,5.6vw,5rem);line-height:.99;letter-spacing:-.065em;margin:20px 0}.hero h1 em{font-family:Georgia,serif;font-weight:500;color:var(--green)}.intro{font-size:1.08rem;color:var(--muted);max-width:520px}.benefits{list-style:none;padding:0;margin:25px 0;display:grid;gap:10px}.benefits li{display:flex;gap:10px;align-items:flex-start}.check{background:var(--lime);color:var(--green);width:23px;height:23px;border-radius:50%;display:grid;place-items:center;flex:none;font-weight:900;font-size:.8rem}.hero-art{position:relative;min-height:510px;border-radius:30px;overflow:hidden;background:linear-gradient(145deg,#dce8cf,#a6c19b 55%,#50765c);padding:26px;display:flex;align-items:flex-end}.hero-art:before{content:"";position:absolute;width:290px;height:390px;border-radius:48% 48% 18% 18%;background:#f1c6a6;top:32px;right:17%;transform:rotate(8deg);box-shadow:inset -28px 0 #dca889}.hero-art:after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:#f5e7ce;top:5px;right:7%;opacity:.85}.art-leaf{position:absolute;z-index:1;top:80px;left:35px;font-size:5rem;transform:rotate(-25deg)}.art-note{position:relative;z-index:2;background:rgba(255,255,255,.91);backdrop-filter:blur(8px);border-radius:20px;padding:20px 22px;max-width:290px;box-shadow:0 15px 40px #203b2a25}.art-note small{color:var(--green);font-weight:800;text-transform:uppercase;letter-spacing:.08em}.art-note strong{display:block;font-family:Georgia,serif;font-size:1.7rem;line-height:1.15;margin-top:6px}
+    .quiz-wrap{background:var(--white);padding:clamp(24px,5vw,56px) 20px 70px}.quiz{max-width:760px;margin:0 auto}.quiz-head{text-align:center;margin-bottom:28px}.quiz-head h2{font-size:clamp(2rem,4vw,3rem);letter-spacing:-.05em;line-height:1.05;margin:14px 0}.quiz-head p{color:var(--muted);margin:0}.progress-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:.82rem;margin:0 0 8px}.progress{height:7px;background:#edf0e8;border-radius:20px;overflow:hidden;margin-bottom:28px}.progress span{display:block;height:100%;width:25%;background:var(--green);border-radius:20px;transition:width .25s}
+    .step{display:none;animation:appear .25s ease}.step.active{display:block}@keyframes appear{from{opacity:.35;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}.step h3{font-size:clamp(1.35rem,3vw,1.8rem);letter-spacing:-.035em;margin:0 0 8px}.step .sub{color:var(--muted);margin:0 0 22px}.options{display:grid;grid-template-columns:1fr 1fr;gap:12px}.option{min-height:70px;text-align:left;border:1px solid var(--line);border-radius:15px;background:#fff;padding:15px 16px;color:var(--ink);display:flex;align-items:center;justify-content:space-between;gap:12px;transition:border-color .2s,background .2s}.option:hover,.option:focus-visible{border-color:var(--green);background:#f6f9f1;outline:none}.option .opt-icon{font-size:1.35rem}.option .arrow{color:var(--green);font-size:1.2rem}.step-actions{display:flex;justify-content:space-between;align-items:center;margin-top:22px;gap:12px}.back{border:0;background:transparent;color:var(--muted);padding:12px 0}.primary{border:0;border-radius:999px;background:var(--green);color:#fff;font-weight:800;padding:14px 23px;box-shadow:0 8px 18px #315d4326}.primary:hover{background:var(--green2)}.primary:disabled{opacity:.4;cursor:not-allowed}.hint{font-size:.8rem;color:var(--muted);text-align:center;margin:20px 0 0}
+    .result{display:none}.result.active{display:block}.result-intro{text-align:center;background:#f3f6ee;border-radius:22px;padding:28px 22px;margin-bottom:28px}.result-intro .result-icon{font-size:2.3rem}.result-intro h3{font-family:Georgia,serif;font-size:2rem;line-height:1.12;margin:8px 0}.result-intro p{color:var(--muted);max-width:550px;margin:0 auto}.packages-title{text-align:center;margin:0 0 7px;font-size:1.6rem;letter-spacing:-.04em}.packages-sub{text-align:center;color:var(--muted);margin:0 0 22px}.packages{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:stretch}.package{border:1px solid var(--line);border-radius:20px;background:#fff;padding:22px 17px;display:flex;flex-direction:column;position:relative}.package.featured{border:2px solid var(--green);background:#fbfdf8;box-shadow:0 12px 32px #315d4315}.tag{font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;color:var(--green);font-weight:900;min-height:20px}.package h4{font-size:1.12rem;margin:8px 0 0}.price{font-size:2.25rem;font-weight:900;letter-spacing:-.06em;margin:6px 0 0}.price small{font-size:.8rem;letter-spacing:0;font-weight:600;color:var(--muted)}.package-desc{color:var(--muted);font-size:.87rem;min-height:58px;margin:8px 0 14px}.package ul{padding-left:18px;font-size:.85rem;display:grid;gap:8px;margin:0 0 20px}.buy{display:block;text-align:center;text-decoration:none;border-radius:999px;background:#edf2e7;color:var(--green);padding:12px 10px;font-size:.88rem;font-weight:850;margin-top:auto}.featured .buy{background:var(--green);color:#fff}.buy:hover{filter:brightness(.95)}.disclaimer{font-size:.78rem;color:var(--muted);text-align:center;max-width:650px;margin:22px auto 0}.restart{display:block;margin:18px auto 0;border:0;background:transparent;color:var(--green);font-weight:750;text-decoration:underline}
+    footer{padding:25px 20px;text-align:center;color:var(--muted);font-size:.78rem}footer a{color:inherit}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;gap:24px;margin-top:8px}.hero-art{min-height:340px}.hero-art:before{width:220px;height:290px;right:15%;top:20px}.hero-art:after{width:160px;height:160px}.art-leaf{font-size:3.5rem}.packages{grid-template-columns:1fr}.package-desc{min-height:0}.package{padding:22px}.options{grid-template-columns:1fr}.option{min-height:62px}.topbar{padding:15px 20px}.secure{font-size:.75rem}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">well<span>form</span></div>
+    <div class="secure">🔒 Private wellness quiz</div>
+  </header>
+  <main>
+    <section class="hero">
+      <div>
+        <span class="eyebrow"><i></i> Your 14-day fresh start</span>
+        <h1>Small steps.<br><em>Stronger habits.</em><br>A plan for you.</h1>
+        <p class="intro">Answer a few quick questions about your routine and goals to explore a 14-day wellness plan that can help you build more consistent habits.</p>
+        <ul class="benefits">
+          <li><span class="check">✓</span><span>Simple, practical steps for everyday routines</span></li>
+          <li><span class="check">✓</span><span>Ideas for balanced meals, movement and consistency</span></li>
+          <li><span class="check">✓</span><span>Choose the level of guidance that fits your needs</span></li>
+        </ul>
+        <button class="primary" id="startBtn">Find my starting point <span aria-hidden="true">→</span></button>
+      </div>
+      <div class="hero-art" aria-label="Illustration representing healthy habits">
+        <div class="art-leaf" aria-hidden="true">🌿</div>
+        <div class="art-note"><small>A gentler approach</small><strong>Progress is built one habit at a time.</strong></div>
+      </div>
+    </section>
+    <section class="quiz-wrap" id="quizSection">
+      <div class="quiz">
+        <div class="quiz-head">
+          <span class="eyebrow">Personal wellness check-in</span>
+          <h2>Let’s find your next step</h2>
+          <p>Choose the answer that feels closest to you. There are no wrong answers.</p>
+        </div>
+        <div id="quizFlow">
+          <div class="progress-meta"><span id="stepLabel">Question 1 of 4</span><span id="progressPercent">25% complete</span></div>
+          <div class="progress" aria-label="Quiz progress"><span id="progressBar"></span></div>
+          <div class="step active" data-step="0">
+            <h3>What is your main wellness goal right now?</h3><p class="sub">This helps us understand what you want to focus on.</p>
+            <div class="options">
+              <button class="option" data-value="healthy habits"><span><span class="opt-icon">🌱</span> Build healthier habits</span><span class="arrow">→</span></button>
+              <button class="option" data-value="weight management"><span><span class="opt-icon">⚖️</span> Manage my weight</span><span class="arrow">→</span></button>
+              <button class="option" data-value="energy"><span><span class="opt-icon">☀️</span> Feel more energetic</span><span class="arrow">→</span></button>
+              <button class="option" data-value="routine"><span><span class="opt-icon">🗓️</span> Create a consistent routine</span><span class="arrow">→</span></button>
+            </div>
+          </div>
+          <div class="step" data-step="1">
+            <h3>What feels hardest to stay consistent with?</h3><p class="sub">Pick the biggest challenge in your everyday life.</p>
+            <div class="options">
+              <button class="option" data-value="meal planning"><span><span class="opt-icon">🥗</span> Planning balanced meals</span><span class="arrow">→</span></button>
+              <button class="option" data-value="activity"><span><span class="opt-icon">🚶</span> Finding time to move</span><span class="arrow">→</span></button>
+              <button class="option" data-value="motivation"><span><span class="opt-icon">✨</span> Staying motivated</span><span class="arrow">→</span></button>
+              <button class="option" data-value="routine"><span><span class="opt-icon">⏰</span> Keeping a routine</span><span class="arrow">→</span></button>
+            </div>
+          </div>
+          <div class="step" data-step="2">
+            <h3>How would you describe your current routine?</h3><p class="sub">Think about meals, movement, rest and your schedule.</p>
+            <div class="options">
+              <button class="option" data-value="beginner"><span><span class="opt-icon">🌿</span> I’m just getting started</span><span class="arrow">→</span></button>
+              <button class="option" data-value="inconsistent"><span><span class="opt-icon">🔄</span> It changes from day to day</span><span class="arrow">→</span></button>
+              <button class="option" data-value="some habits"><span><span class="opt-icon">🌤️</span> I have a few good habits</span><span class="arrow">→</span></button>
+              <button class="option" data-value="structured"><span><span class="opt-icon">📋</span> I like a clear structure</span><span class="arrow">→</span></button>
+            </div>
+          </div>
+          <div class="step" data-step="3">
+            <h3>What kind of support would help you most?</h3><p class="sub">Choose the format you are most likely to use.</p>
+            <div class="options">
+              <button class="option" data-value="simple"><span><span class="opt-icon">📝</span> A simple step-by-step guide</span><span class="arrow">→</span></button>
+              <button class="option" data-value="more guidance"><span><span class="opt-icon">🧭</span> More guidance and structure</span><span class="arrow">→</span></button>
+              <button class="option" data-value="full support"><span><span class="opt-icon">💚</span> The most comprehensive option</span><span class="arrow">→</span></button>
+              <button class="option" data-value="compare"><span><span class="opt-icon">🔎</span> Compare all available options</span><span class="arrow">→</span></button>
+            </div>
+          </div>
+          <div class="step-actions"><button class="back" id="backBtn" type="button" hidden>← Back</button><span></span><button class="primary" id="continueBtn" type="button" disabled>Continue →</button></div>
+          <p class="hint">Your answers are used only in this page to display your result. No account is needed.</p>
+        </div>
+        <section class="result" id="result" aria-live="polite">
+          <div class="result-intro"><div class="result-icon">🌿</div><h3>Your next step starts with a plan you can follow.</h3><p id="resultText">Based on your answers, start with practical, manageable habits and choose the level of guidance that feels right for you. Your answers are a general guide, not a medical assessment.</p></div>
+          <h3 class="packages-title">Choose your 14-day plan</h3><p class="packages-sub">Pick the package that best fits your goals and preferred level of support.</p>
+          <div class="packages">
+            <article class="package">
+              <div class="tag">Start simple</div><h4>Basic</h4><div class="price">$27 <small>USD</small></div><p class="package-desc">A straightforward starting point for building healthier routines.</p>
+              <ul><li>14-day plan access</li><li>Simple habit guidance</li><li>Beginner-friendly structure</li></ul>
+              <a class="buy" href="https://checkout.escalepay.com/8092275" target="_blank" rel="noopener noreferrer">Choose Basic — $27</a>
+            </article>
+            <article class="package featured">
+              <div class="tag">Popular choice</div><h4>Plus</h4><div class="price">$70 <small>USD</small></div><p class="package-desc">Extra structure for people who want more guidance.</p>
+              <ul><li>14-day plan access</li><li>More detailed routine guidance</li><li>Practical consistency tools</li></ul>
+              <a class="buy" href="https://checkout.escalepay.com/9898627" target="_blank" rel="noopener noreferrer">Choose Plus — $70</a>
+            </article>
+            <article class="package">
+              <div class="tag">Full experience</div><h4>Pro</h4><div class="price">$120 <small>USD</small></div><p class="package-desc">The most comprehensive option for a more guided experience.</p>
+              <ul><li>14-day plan access</li><li>Expanded guidance and resources</li><li>Comprehensive habit framework</li></ul>
+              <a class="buy" href="https://checkout.escalepay.com/4959989" target="_blank" rel="noopener noreferrer">Choose Pro — $120</a>
+            </article>
+          </div>
+          <p class="disclaimer">Important: This plan is for general educational and wellness purposes, not medical advice or a guarantee of weight loss. Results vary by person. No specific amount of weight loss is promised. Consult a qualified healthcare professional before changing your diet or activity, especially if you have a medical condition, are pregnant, or have a history of disordered eating.</p>
+          <button class="restart" id="restartBtn">Retake the quiz</button>
+        </section>
+      </div>
+    </section>
+  </main>
+  <footer>© <span id="year"></span> Wellform · General wellness education · <a href="mailto:support@example.com">Contact</a><br>Replace the placeholder contact email and confirm that package descriptions match the products before publishing.</footer>
+  <script>
+    (() => {
+      const steps = [...document.querySelectorAll('.step')];
+      const flow = document.getElementById('quizFlow');
+      const result = document.getElementById('result');
+      const progressBar = document.getElementById('progressBar');
+      const stepLabel = document.getElementById('stepLabel');
+      const progressPercent = document.getElementById('progressPercent');
+      const continueBtn = document.getElementById('continueBtn');
+      const backBtn = document.getElementById('backBtn');
+      const answers = [];
+      let current = 0;
+      function render() {
+        steps.forEach((step, i) => step.classList.toggle('active', i === current));
+        const percent = Math.round(((current + 1) / steps.length) * 100);
+        progressBar.style.width = percent + '%';
+        stepLabel.textContent = 'Question ' + (current + 1) + ' of ' + steps.length;
+        progressPercent.textContent = percent + '% complete';
+        backBtn.hidden = current === 0;
+        continueBtn.textContent = current === steps.length - 1 ? 'See my options →' : 'Continue →';
+        continueBtn.disabled = !answers[current];
+        steps[current].querySelectorAll('.option').forEach(button => {
+          const selected = button.dataset.value === answers[current];
+          button.style.borderColor = selected ? 'var(--green)' : '';
+          button.style.background = selected ? '#f0f6e9' : '';
+          button.setAttribute('aria-pressed', selected ? 'true' : 'false');
+        });
+      }
+      steps.forEach((step, index) => {
+        step.querySelectorAll('.option').forEach(button => button.addEventListener('click', () => {
+          answers[index] = button.dataset.value;
+          render();
+          if (index < steps.length - 1) {
+            window.setTimeout(() => { current++; render(); }, 160);
+          } else {
+            continueBtn.disabled = false;
+          }
+        }));
+      });
+      continueBtn.addEventListener('click', () => {
+        if (!answers[current]) return;
+        if (current < steps.length - 1) { current++; render(); }
+        else {
+          flow.style.display = 'none';
+          result.classList.add('active');
+          const goal = answers[0] || 'wellness';
+          const challenge = answers[1] || 'your routine';
+          document.getElementById('resultText').textContent = 'You want to focus on ' + goal + ' and identified ' + challenge + ' as a challenge. A practical next step is to choose a plan that supports manageable habits, balanced routines and consistency. Your answers are a general guide, not a medical assessment.';
+          result.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+      backBtn.addEventListener('click', () => { if (current > 0) { current--; render(); } });
+      document.getElementById('startBtn').addEventListener('click', () => document.getElementById('quizSection').scrollIntoView({behavior:'smooth'}));
+      document.getElementById('restartBtn').addEventListener('click', () => {
+        answers.length = 0; current = 0; flow.style.display = ''; result.classList.remove('active'); render();
+        document.getElementById('quizSection').scrollIntoView({behavior:'smooth'});
+      });
+      document.getElementById('year').textContent = new Date().getFullYear();
+      render();
+    })();
+  </script>
+</body>
+</html>
